@@ -3,24 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/dashboard.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/styles/dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Dashboard</title>
     <?php 
         include_once '../config.php';
+        session_start();
+
+        if (isset($_SESSION['user_data'])) {
+            $user_data = $_SESSION['user_data'];
+            // echo "<prev>";
+            // print_r($user_data);
+            // echo "</prev>";
+        }
+        //  else {
+        //     $_SESSION['user_data'] = '';
+        //     header("Location: dashboard.php"); 
+        // }
     ?>
 </head>
 <body>
     <header class="header_container">
         <div class="wrapper">
-            <span>UserName</span>
+            <span><?php echo $user_data['user_name'];?></span>
             <ul>
                 <li><a href="<?php BASE_URL ?>/pages/dashboard.php">Home</a></li>
                 <li><a href="<?php BASE_URL ?>/pages/file.php">File</a></li>
                 <li><a href="<?php BASE_URL ?>/pages/faq.php">Faq</a></li>
                 <li><a href="<?php BASE_URL ?>/pages/settings.php">Settings</a></li>
             </ul>
-            <button>log out</button>
+            <!-- <form method="post"> -->
+                <input type="submit" name='log'>log out</button>
+            <!-- </form> -->
         </div>
     </header>
     <section class="dashboard_wrapper">

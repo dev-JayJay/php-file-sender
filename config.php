@@ -10,14 +10,13 @@ function connection() {
 
     if ($conn -> connect_error) {
         die("connection failed: " . $conn->connect_error) ;
-    } else {
-        echo " connection successful";
     }
-    $conn->close();
+    return $conn;
+    // $conn->close();
 }
 
-    // if (!defined('BASE_URL')) {
-    //     define('BASE_URL', 'http://localhost/PHP/daha-project/');
-    // }
+    if (!defined('BASE_URL')) {
+        define('BASE_URL', 'http://localhost/PHP/daha-project/');
+    }
 
 ?>

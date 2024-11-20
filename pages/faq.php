@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ Component</title>
+    <!-- <link rel="stylesheet" href="<?php echo BASE_URL; ?>/styles/faq.css"> -->
+    <link rel="stylesheet" href="..//styles/faq.css">
     <?php 
-        include_once '../config.php';
+        // session_start(); 
+        // include_once '../config.php';
+
+        // if (isset($_POST['log_out'])) {
+        //     session_unset(); 
+        //     session_destory(); 
+        //     header("Location: login.php");
+        //     exit();
+        // }
     ?>
-    <link rel="stylesheet" href="../styles/faq.css">
 </head>
 <body>
     <header class="header_container">
@@ -19,7 +28,9 @@
                 <li><a href="<?php BASE_URL ?>/pages/faq.php">Faq</a></li>
                 <li><a href="<?php BASE_URL ?>/pages/settings.php">Settings</a></li>
             </ul>
-            <button>log out</button>
+            <form method="post">
+                <button name="log_out">log out</button>
+            </form>
         </div>
     </header>
     <div class="faq-container">

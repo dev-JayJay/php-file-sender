@@ -7,7 +7,7 @@
     <?php 
         include_once '../config.php';
     ?>
-    <link rel="stylesheet" href="../styles/setting.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/styles/setting.css">
 </head>
 <body>
     <header class="header_container">
